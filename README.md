@@ -1,6 +1,4 @@
-Data analysis description for the manuscript 
-
-## Data analysis description for the manuscript "Immune checkpoint inhibitor response in sarcomas associates with immune infiltrates and increased expression of transposable elements and viral response pathways" 
+## "Immune checkpoint inhibitor response in sarcomas associates with immune infiltrates and increased expression of transposable elements and viral response pathways" 
 
 ## data
 Data directory includes source data and code necessary to recreate all figures and supplemental figures.
