@@ -24,9 +24,14 @@ Matching of our immune hot and cold clusters with previously published Petitprez
 Supplemental Figure 6A, correlation between IKZF1 and B-cells
 The second part of the script reads in intergenic TE counts, normalizes and filters them, and plots those normalized data heatmap with clinical correlates; Supplemental figure 5
 
-```
-Script_2.R
-```
+
+# Script_2.R
+
+This script requires that you first run Figure 1 script as it will used normalized counts data, organized Clinical data file and normalized intergenic TE matrix. This scripts performs GLMnet analysis evaluating all different models in Figure 2A. It also plots significant features from 
+those models Figure 2B. Finally it plots violin plots of normalized counts for 4 examples of significant features that differ between immune hot and cold Figure 2C, performs glm to test association between IKZF, Te score and Immune types in the model, adjusted for the batch and histology that is reported in the manuscript, performs conditional independence (mutual information) tests to identify causal relationships between TEs, IKZF1, and immune-hot/-cold phenotype that is reported in the manuscript.
+
+
+
 
 
 ```
