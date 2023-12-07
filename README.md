@@ -11,7 +11,7 @@ Data files necessery to reproduce all the figures are avavible in data folder an
 Scripts to process RNA-seq are found in data/study/Scripts/ folder or data/TCGA/Scripts/ folder and include
 
 
-Script_1.R 
+# Script_1.R 
 This is the initial script that reads in raw RNA seq counts obtained from REDISCOVERTE pipeline, normalizes counts, filters low counts, 
 and performs immune deconvolution using MCP counter, and then FactoMineR clustering of the MCP counter deconvoluted immune cell proportions
 to establish 2 major clusters; immune hot and cold. The first part of the script plots heatmap of those immune 
