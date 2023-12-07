@@ -1,6 +1,6 @@
 ## "Immune checkpoint inhibitor response in sarcomas associates with immune infiltrates and increased expression of transposable elements and viral response pathways" 
 
-## Data and code
+# Data and code
 Data directory includes source data and code necessary to recreate all main and supplemental figures.
 Data directory has two subdirectories; study, and TCGA featuring analysis of the clinical dataset collected at MSKCC,
 and TCG represents data set and anysis that replicate our observations
@@ -11,7 +11,7 @@ Data files necessery to reproduce all the figures are avavible in data folder an
 Scripts to process RNA-seq are found in data/study/Scripts/ folder or data/TCGA/Scripts/ folder and include
 
 
-# Script_1.R 
+## Script_1.R 
 
 This is the initial script that reads in raw RNA seq counts obtained from REDISCOVERTE pipeline, normalizes counts, filters low counts, 
 and performs immune deconvolution using MCP counter, and then FactoMineR clustering of the MCP counter deconvoluted immune cell proportions
@@ -25,7 +25,7 @@ Supplemental Figure 6A, correlation between IKZF1 and B-cells
 The second part of the script reads in intergenic TE counts, normalizes and filters them, and plots those normalized data heatmap with clinical correlates; Supplemental figure 5
 
 
-# Script_2.R
+## Script_2.R
 
 This script requires that you first run Figure 1 script as it will used normalized counts data, organized Clinical data file and normalized intergenic TE matrix. This scripts performs GLMnet analysis evaluating all different models in Figure 2A. It also plots significant features from 
 those models Figure 2B. Finally it plots violin plots of normalized counts for 4 examples of significant features that differ between immune hot and cold Figure 2C, performs glm to test association between IKZF, Te score and Immune types in the model, adjusted for the batch and histology that is reported in the manuscript, performs conditional independence (mutual information) tests to identify causal relationships between TEs, IKZF1, and immune-hot/-cold phenotype that is reported in the manuscript.
