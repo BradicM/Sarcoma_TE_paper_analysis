@@ -1,53 +1,58 @@
 ## "Immune checkpoint inhibitor response in sarcomas associates with immune infiltrates and increased expression of transposable elements and viral response pathways" 
 
 # Data description
-Data directory includes source data and code necessary to recreate all main and supplemental figures.
-Data directory has two subdirectories; study, and TCGA featuring analysis of the clinical dataset collected at MSKCC,
-and TCG represents data set and anysis that replicate our observations
 
+The data directory includes the source data and code necessary to recreate all main and supplemental figures. The data directory has two subdirectories: 'study' and 'TCGA'. The 'study' subdirectory features analysis of the clinical dataset collected at MSKCC, while the 'TCGA' subdirectory represents the data set and analysis that replicate our observations.
 
-Data files necessery to reproduce all the figures are avavible in data folder and include: 
+All necessary data files to reproduce all the figures are available in the 'data' folder and include:
 
-Scripts to process RNA-seq are found in data/study/Scripts/ folder or data/TCGA/Scripts/ folder and include
+Scripts to process RNA-seq data, which can be found in the 'data/study/Scripts/' folder or 'data/TCGA/Scripts/' folder.
+
 
 # Code description 
 ## Script_1.R 
 
-This is the initial script that reads in raw RNA seq counts obtained from REDISCOVERTE pipeline, normalizes counts, filters low counts, 
-and performs immune deconvolution using MCP counter, and then FactoMineR clustering of the MCP counter deconvoluted immune cell proportions
-to establish 2 major clusters; immune hot and cold. The first part of the script plots heatmap of those immune 
-clusters and relevant clinical correlates; Figure 1A,B,C
-This scripts also performs following analysis and plots Figures:
-Kaplan-Meier analysis and plots for Immune hot/cold groups and PFS (months); Figure 1D
-Cox Hazardous model analysis and plot Supplemental Figure 2 
-Matching of our immune hot and cold clusters with previously published Petitprez et.al clustering of immune cells Supplemental Figure 3
-Supplemental Figure 6A, correlation between IKZF1 and B-cells
-The second part of the script reads in intergenic TE counts, normalizes and filters them, and plots those normalized data heatmap with clinical correlates; Supplemental figure 5
+This script performs a comprehensive analysis of our clinical raw RNA sequencing counts obtained from the REDISCOVERTE pipeline run. The script first normalizes and filters the counts, and then performs immune deconvolution using the MCP counter. The deconvoluted immune cell proportions are then clustered using FactoMineR to establish two major clusters: immune hot and cold.
+
+The script generates several figures, including a heatmap of the immune clusters and relevant clinical correlates (Figure 1A,B,C), a Kaplan-Meier analysis and plot for Immune hot/cold groups and PFS (months) (Figure 1D), factor miner clustering of deconvoluted data (Supplemental Figure 1), a Cox Hazardous model analysis and plot (Supplemental Figure 2), and a matching of our immune hot and cold clusters with previously published Petitprez et.al clustering of immune cells (Supplemental Figure 3). Additionally, the script generates a heatmap of normalized intergenic TE counts with clinical correlates (Supplemental Figure 5).
+
+The script also includes several supplementary figures, including a correlation between IKZF1 and B-cells (Supplemental Figure 6A).
 
 
 ## Script_2.R
 
-This script requires that you first run Script_1.R as it will used normalized counts data, organized Clinical data file and normalized intergenic TE matrix. This scripts performs GLMnet analysis evaluating all different models in Figure 2A. It also plots significant features from 
-those models Figure 2B. Finally it plots violin plots of normalized counts for 4 examples of significant features that differ between immune hot and cold Figure 2C, performs glm to test association between IKZF, Te score and Immune types in the model, adjusted for the batch and histology that is reported in the manuscript, performs conditional independence (mutual information) tests to identify causal relationships between TEs, IKZF1, and immune-hot/-cold phenotype that is reported in the manuscript.
+This script requires that you first run Script_1.R, as it utilizes normalized counts data, an organized clinical data file, and a normalized intergenic TE matrix. The script performs GLMnet analysis, evaluating all different models depicted in Figure 2A. It also plots significant features from those models in Figure 2B. Additionally, it plots violin plots of normalized counts for four examples of significant features that differ between immune hot and cold, as shown in Figure 2C.
+
+The script also performs a GLM test to assess the association between IKZF, Te score, and Immune types in the model, while adjusting for batch and histology. This analysis is reported in the manuscript. Furthermore, the script conducts conditional independence (mutual information) tests to identify causal relationships between TEs, IKZF1, and the immune-hot/-cold phenotype, as reported in the manuscript.
 
 
 ## Script_3.R
 
-This script requires that you first run Script_1.R, and Script_2.R script
-This script gets gene lists for immune pathways from published data, calculates TE-score for significant TE familes, performs correlation and plotting of Figure 3B, and partical correlation and plotting of Figure 3A,and performs Kaplan Meier plotting and analysis for Figure 3C (for IKZF1 and TE score).
+This script requires that you first run Script_1.R and Script_2.R.
+
+This script retrieves gene lists for immune pathways from published data and calculates TE-scores for significant TE families. It then performs  partial correlation and plotting of Figure 3A, and correlation and plotting between CD274, TE score and IKZF1 in figure Figure 3B,  and Kaplan-Meier plotting and analysis for Figure 3C (for IKZF1 and TE score).
+
+## Script_1_TCGA.R
+
+This script is the initial step in analyzing raw TCGA RNA sequencing data obtained from the REDISCOVERTE pipeline run. It normalizes the counts, filters out low counts, and performs immune deconvolution using the MCP counter. The deconvoluted immune cell proportions are then clustered using FactoMineR to establish two major clusters: immune hot and cold. The script also generates a heatmap of the two immune clusters and relevant clinical correlates, as shown in Figure 4A,B,C. Additionally, the script performs Kaplan-Meier analysis and plots for Immune hot/cold groups and Overall survival (OS), as seen in Figure 4D, and for IKZF1 high/low expression and OS survival for Figure 4F. Furthermore, the script conducts Cox Hazardous model analysis for overall survival and immune type for TCGA data.
+
+## Script_2_TCGA.R
+
+This script requires that you first run the Script_1_TCGA.R, as it utilizes normalized counts data, an organized Clinical TCGA file, and a normalized intergenic TE matrix from TCGA.
+
+The script performs GLMnet analysis, evaluating all different models depicted in Supplemental Figure 8A. It also plots significant features from those models in Supplemental Figure 8B. Additionally, it plots violin plots of normalized counts for three examples of significant features that differ between immune hot and cold, as shown in Supplemental Figure 8C.
 
 
-```
-Script_1_TCGA.R
-```
 
-```
-Script_2_TCGA.R
-```
+## Script_3_TCGA.R
 
-```
-Script_3_TCGA.R
-```
+This script requires that you first run the Script_1_TCGA.R and Script_2_TCGA.R
+
+This script reads gene lists for immune pathways from published data (provided in data), calculates TE-scores for significant TE families, and performs partial correlation and plotting of Figure 9A, and correlation and plotting between CD274, TE score and IKZF1 in figure 9B. 
+Additionally, it conducts Kaplan-Meier plotting and analysis for Figure 4E.
+
+
+
 
 ## AdditionalScripts
 AdditionalScripts directory includes scripts used for for following analysis: 
