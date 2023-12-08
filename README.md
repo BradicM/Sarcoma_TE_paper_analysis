@@ -42,7 +42,7 @@ The script also includes several supplementary figures, including a correlation 
 
 This script requires that you first run Script_1.R, as it utilizes normalized counts data, an organized clinical data file, and a normalized intergenic TE matrix. The script performs GLMnet analysis, evaluating all different models depicted in Figure 2A. It also plots significant features from those models in Figure 2B. Additionally, it plots violin plots of normalized counts for four examples of significant features that differ between immune hot and cold, as shown in Figure 2C.
 
-The script also performs a GLM test to assess the association between IKZF, Te score, and Immune types in the model, while adjusting for batch and histology. This analysis is reported in the manuscript. Furthermore, the script conducts conditional independence (mutual information) tests to identify causal relationships between TEs, IKZF1, and the immune-hot/-cold phenotype, as reported in the manuscript.
+The script also performs a GLM test to assess the association between IKZF, Te score, and Immune types in the model, while adjusting for batch and histology. This analysis is reported in the manuscript. Furthermore, the script conducts conditional independence (mutual information) tests to identify causal relationships between TEs, IKZF1, and the immune-hot/-cold phenotype, as reported in the manuscript. Calculation of correlations between TE features (Supplemental Figure 6B)  & TE score calculation are also performed by this script.
 
 
 ## Script_3.R
