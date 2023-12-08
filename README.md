@@ -62,7 +62,6 @@ This script requires that you first run the Script_1_TCGA.R, as it utilizes norm
 The script performs GLMnet analysis, evaluating all different models depicted in Supplemental Figure 8A. It also plots significant features from those models in Supplemental Figure 8B. Additionally, it plots violin plots of normalized counts for three examples of significant features that differ between immune hot and cold, as shown in Supplemental Figure 8C.
 
 
-
 ## Script_3_TCGA.R
 
 This script requires that you first run the Script_1_TCGA.R and Script_2_TCGA.R
@@ -71,19 +70,36 @@ This script reads gene lists for immune pathways from published data (provided i
 Additionally, it conducts Kaplan-Meier plotting and analysis for Figure 4E.
 
 
-
-
 ## AdditionalScripts
-AdditionalScripts directory includes scripts used for for following analysis: 
+The AdditionalScripts directory includes scripts used for various analyses, such as:
 
-```
-Script for processing RNA-seq counts and to obtain 64 cell types that are used for lymphoid and myeloid cell content calculation
-Xcell_analysis.R
+Xcell_analysis.R: A script for processing RNA-seq counts and obtaining 64 cell types that are used for lymphoid and myeloid cell content calculation.
 
-Scripts for calcualtion of myeloid and lymphoid content for each sample
-myeloid_and_lymphoid_content_calculation.R
+myeloid_and_lymphoid_content_calculation.R: Scripts for calculating myeloid and lymphoid content for each sample."
 
-```
+Supplemental_figure_4ABC.R ; Script for plotting purity for immune hot and cold, purity simulaiton, and person correlation between purity, lymphoid and myeloid cell content
+
+
+## HTML file reports
+We also provide compiled HTML report files for each script, containing all the code and figures/tables presented in the manuscript. To access these reports, please download the HTM files for each script.
+
+Study HTML reports: 
+
+Script_1.html
+
+Script_2.html
+
+Script_3.html
+
+Supplemental_figure_4ABC.html
+
+TCGA HTML reports: 
+
+Script_1_TCGA.html
+
+Script_2_TCGA.html
+
+Script_3_TCGA.html
 
 
 ## Contact
