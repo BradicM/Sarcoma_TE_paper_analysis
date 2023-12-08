@@ -80,7 +80,7 @@ myeloid_and_lymphoid_content_calculation.R: Scripts for calculating myeloid and 
 Supplemental_figure_4ABC.R ; Script for plotting purity for immune hot and cold, purity simulaiton, and person correlation between purity, lymphoid and myeloid cell content
 
 Note: Purity estimates show in the figure, and disccused in the manuscript were retrieved by processing WES through TEMPO pipline (https://github.com/mskcc/tempo) as described in 
-Materials and Methods. 
+Materials and Methods section of the paper.
 
 ## HTML file reports
 We also provide compiled HTML report files for each script, containing all the code and figures/tables presented in the manuscript. To access these reports, please download the HTM files for each script.
