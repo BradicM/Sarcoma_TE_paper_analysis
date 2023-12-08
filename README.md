@@ -6,10 +6,29 @@ The data directory includes the source data and code necessary to recreate all m
 
 All necessary data files to reproduce all the figures are available in the 'data' folder and include:
 
-Scripts to process RNA-seq data, which can be found in the 'data/study/Scripts/' folder or 'data/TCGA/Scripts/' folder.
+
+
+C_GAS_gene_list_KEGG
+
+Clinical_phenotypes
+
+Epigentic_pathway_genes
+
+Gene_lists_for_ddGSEA.txt
+
+GLMnet_Functions.R
+
+NanostringCentroids_from_Petiprez_publication
+
+Pathway_annotations_for_24_pathways.txt
+
+TE_family_annotation
+
 
 
 # Code description 
+Scripts to process RNA-seq data, which can be found in the 'data/study/Scripts/' folder or 'data/TCGA/Scripts/' folder.
+
 ## Script_1.R 
 
 This script performs a comprehensive analysis of our clinical raw RNA sequencing counts obtained from the REDISCOVERTE pipeline run. The script first normalizes and filters the counts, and then performs immune deconvolution using the MCP counter. The deconvoluted immune cell proportions are then clustered using FactoMineR to establish two major clusters: immune hot and cold.
