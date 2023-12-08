@@ -1,0 +1,19 @@
+The data directory includes the source data and code necessary to recreate all main and supplemental figures. The data directory has two subdirectories: 'study' and 'TCGA'. The 'study' subdirectory features analysis of the clinical dataset collected at MSKCC, while the 'TCGA' subdirectory represents the data set and analysis that replicate our observations.
+
+All necessary data files to reproduce all the figures are available in the 'data' folder and include:
+
+C_GAS_gene_list_KEGG
+
+Clinical_phenotypes
+
+Epigentic_pathway_genes
+
+Gene_lists_for_ddGSEA.txt
+
+GLMnet_Functions.R
+
+NanostringCentroids_from_Petiprez_publication
+
+Pathway_annotations_for_24_pathways.txt
+
+TE_family_annotation
