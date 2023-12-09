@@ -31,7 +31,7 @@ becaus of their size), and these files could be downloaded from Zenodo: https://
 dbgap acccession phs003284. 
 
 # Code description 
-All the costume code used to process RNA-seq data after intial processing by REDISCOVERTE can be found in the 'data/study/Scripts/' folder or 'data/TCGA/Scripts/' folder.
+All the costume code used to process RNA-seq data after intial processing by REDISCOVERTE can be found in the 'data/study/' folder or 'data/TCGA/' folder.
 
 ## Script_1.R 
 
