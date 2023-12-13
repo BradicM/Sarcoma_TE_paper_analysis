@@ -26,9 +26,6 @@ library(survminer)
 `%nin%` = Negate(`%in%`)
 
 
-
-setwd("/Users/mbradic/Library/CloudStorage/OneDrive-MemorialSloanKetteringCancerCenter/!GDriveMigratedData/Nacev_project/TRANSPOSONS/FINAL_PAPER_ANALYSIS/PAPER_CODE_REPO/GITHUB_FOR_UPLOAD_FINAL/data/TCGA/")
-
 #Set to the directory where scripts and all data are for analysis for TCGA data
 #setwd("name of directory")
 
