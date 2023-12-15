@@ -90,7 +90,8 @@ correct_order_for_batch<-left_join(correct_order_for_batch,Ordered_pheno)
 all.equal(colnames(mat_immuno2),correct_order_for_batch$CMO_ID)
 
 mat_immuno2_no_batch<-removeBatchEffect(mat_immuno2, correct_order_for_batch$batch,correct_order_for_batch$`Abbreviation for Figures`)
-#note results do not significantly change if not using batch correction 
+
+
 ##################################################### DETERMINE CLUSTERS FROM MCP counter using FactoMineR analysis ###############
 #set seed for reproducibilty
 set.seed(2021)
@@ -251,9 +252,6 @@ ggsurvplot(sfit,pval=TRUE, conf.int=FALSE, risk.table=TRUE,risk.table.height=.15
 
 
 #Supplemental Fig 2 coxph anlysis for Immune subtype
-model <- coxph( Surv(PFS_months, `Alive/dead`) ~ Immune_subtypes  + `Abbreviation for Figures` + batch + Protocol, data = Ordered_pheno )
-
-#Since batch and protocol do not significantly contribute to the model, we will be using only Histology in our final survival model
 model2 <- coxph( Surv(PFS_months, `Alive/dead`) ~ Immune_subtypes  + `Abbreviation for Figures`, data = Ordered_pheno )
 ggforest(model2)
 
