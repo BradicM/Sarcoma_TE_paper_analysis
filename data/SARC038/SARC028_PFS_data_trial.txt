@@ -1,0 +1,144 @@
+SARC-ID	PFS_Survival Event	PFS_days	PFS_months	OS	OS_days	OS_months
+001-036	Event occurred	47	1.55	Censored	103	3.39
+001-038	Censored	7	0.23	Censored	7	0.23
+001-045	Event occurred	560	18.41	Censored	623	20.48
+001-051	Event occurred	215	7.07	Censored	244	8.02
+001-058	Event occurred	46	1.51	Event occurred	191	6.28
+001-065	Event occurred	48	1.58	Censored	104	3.42
+001-070	Event occurred	281	9.24	Event occurred	363	11.93
+001-076	Event occurred	132	4.34	Censored	237	7.79
+001-084	Event occurred	127	4.18	Censored	232	7.63
+001-085	Event occurred	134	4.41	Censored	146	4.8
+001-086	Censored	1223	40.21	Censored	1316	43.27
+001-097	Event occurred	126	4.14	Censored	161	5.29
+001-098	Event occurred	161	5.29	Event occurred	223	7.33
+001-101	Event occurred	51	1.68	Censored	142	4.67
+001-106	Event occurred	42	1.38	Event occurred	101	3.32
+001-116	Event occurred	41	1.35	Censored	131	4.31
+001-123	Event occurred	46	1.51	Event occurred	124	4.08
+001-125	Event occurred	78	2.56	Event occurred	151	4.96
+001-126	Event occurred	41	1.35	Censored	54	1.78
+001-127	Event occurred	42	1.38	Event occurred	192	6.31
+001-133	Event occurred	2	0.07	Event occurred	7	0.23
+001-144	Event occurred	41	1.35	Event occurred	73	2.4
+001-149	Event occurred	41	1.35	Censored	147	4.83
+008-064	Event occurred	56	1.84	Censored	63	2.07
+008-069	Event occurred	157	5.16	Censored	158	5.19
+008-137	Event occurred	42	1.38	Event occurred	91	2.99
+016-001	Event occurred	350	11.51	Censored	385	12.66
+016-002	Event occurred	138	4.54	Event occurred	183	6.02
+016-003	Event occurred	53	1.74	Censored	71	2.33
+016-004	Event occurred	54	1.78	Censored	146	4.8
+016-005	Event occurred	41	1.35	Event occurred	41	1.35
+016-007	Event occurred	56	1.84	Censored	65	2.14
+016-008	Censored	392	12.89	Censored	392	12.89
+016-009	Event occurred	56	1.84	Event occurred	105	3.45
+016-010	Event occurred	51	1.68	Censored	78	2.56
+016-011	Event occurred	67	2.2	Censored	67	2.2
+016-012	Event occurred	139	4.57	Censored	146	4.8
+016-013	Event occurred	54	1.78	Censored	67	2.2
+016-014	Event occurred	56	1.84	Censored	70	2.3
+016-015	Event occurred	55	1.81	Event occurred	93	3.06
+016-016	Censored	57	1.87	Censored	122	4.01
+016-032	Event occurred	49	1.61	Censored	86	2.83
+016-044	Event occurred	153	5.03	Censored	201	6.61
+016-053	Event occurred	61	2.01	Censored	61	2.01
+016-102	Event occurred	52	1.71	Censored	91	2.99
+016-134	Event occurred	269	8.84	Event occurred	462	15.19
+016-135	Event occurred	93	3.06	Event occurred	93	3.06
+021-060	Event occurred	49	1.61	Censored	126	4.14
+021-062	Event occurred	58	1.91	Censored	58	1.91
+021-063	Event occurred	48	1.58	Censored	83	2.73
+021-067	Event occurred	49	1.61	Censored	152	5
+021-068	Event occurred	216	7.1	Censored	1279	42.05
+021-071	Event occurred	49	1.61	Censored	126	4.14
+021-072	Censored	131	4.31	Censored	131	4.31
+021-075	Event occurred	49	1.61	Censored	53	1.74
+034-048	Event occurred	58	1.91	Censored	64	2.1
+034-066	Event occurred	63	2.07	Censored	64	2.1
+034-095	Event occurred	56	1.84	Censored	148	4.87
+034-100	Event occurred	56	1.84	Censored	70	2.3
+034-104	Event occurred	86	2.83	Censored	707	23.24
+034-145	Event occurred	58	1.91	Censored	212	6.97
+038-061	Event occurred	41	1.35	Event occurred	41	1.35
+038-081	Event occurred	96	3.16	Censored	96	3.16
+038-122	Event occurred	36	1.18	Event occurred	36	1.18
+038-128	Event occurred	135	4.44	Censored	164	5.39
+038-129	Event occurred	42	1.38	Event occurred	123	4.04
+040-022	Event occurred	125	4.11	Censored	132	4.34
+040-026	Event occurred	55	1.81	Censored	158	5.19
+040-110	Event occurred	49	1.61	Censored	49	1.61
+048-020	Event occurred	7	0.23	Event occurred	7	0.23
+048-025	Event occurred	47	1.55	Event occurred	290	9.53
+048-029	Censored	721	23.7	Censored	819	26.93
+048-031	Event occurred	19	0.62	Event occurred	56	1.84
+048-033	Event occurred	15	0.49	Event occurred	40	1.32
+048-035	Censored	119	3.91	Censored	119	3.91
+048-037	Event occurred	141	4.64	Censored	155	5.1
+048-040	Event occurred	46	1.51	Censored	104	3.42
+048-041	Event occurred	47	1.55	Censored	48	1.58
+048-047	Censored	44	1.45	Censored	44	1.45
+048-057	Event occurred	60	1.97	Censored	60	1.97
+048-059	Event occurred	133	4.37	Censored	134	4.41
+048-074	Event occurred	30	0.99	Censored	50	1.64
+048-078	Event occurred	294	9.67	Censored	294	9.67
+048-079	Event occurred	54	1.78	Event occurred	123	4.04
+048-087	Event occurred	217	7.13	Event occurred	241	7.92
+048-089	Event occurred	55	1.81	Event occurred	190	6.25
+048-099	Event occurred	47	1.55	Event occurred	47	1.55
+048-109	Censored	28	0.92	Censored	28	0.92
+048-111	Event occurred	50	1.64	Censored	63	2.07
+048-114	Event occurred	385	12.66	Censored	385	12.66
+048-118	Event occurred	49	1.61	Censored	854	28.08
+048-124	Event occurred	33	1.08	Event occurred	33	1.08
+048-131	Censored	802	26.37	Censored	831	27.32
+048-136	Event occurred	55	1.81	Event occurred	238	7.82
+048-142	Event occurred	49	1.61	Censored	651	21.4
+048-147	Censored	29	0.95	Censored	29	0.95
+071-052	Event occurred	113	3.72	Censored	113	3.72
+071-056	Event occurred	44	1.45	Censored	51	1.68
+071-103	Event occurred	43	1.41	Censored	44	1.45
+071-108	Event occurred	327	10.75	Censored	329	10.82
+071-112	Event occurred	211	6.94	Censored	211	6.94
+071-115	Censored	525	17.26	Censored	525	17.26
+071-119	Event occurred	20	0.66	Censored	28	0.92
+071-121	Event occurred	69	2.27	Censored	110	3.62
+071-148	Event occurred	43	1.41	Censored	48	1.58
+092-030	Event occurred	144	4.73	Censored	168	5.52
+092-034	Event occurred	214	7.04	Censored	214	7.04
+092-042	Event occurred	49	1.61	Censored	49	1.61
+092-046	Censored	19	0.62	Censored	19	0.62
+092-049	Event occurred	431	14.17	Censored	453	14.89
+092-050	Event occurred	48	1.58	Censored	49	1.61
+092-088	Event occurred	126	4.14	Censored	138	4.54
+092-090	Event occurred	413	13.58	Censored	413	13.58
+092-091	Censored	42	1.38	Censored	49	1.61
+092-092	Event occurred	126	4.14	Censored	135	4.44
+092-107	Event occurred	42	1.38	Censored	54	1.78
+092-117	Event occurred	126	4.14	Censored	142	4.67
+092-130	Censored	719	23.64	Censored	761	25.02
+092-138	Event occurred	42	1.38	Censored	64	2.1
+092-139	Event occurred	130	4.27	Censored	216	7.1
+092-141	Event occurred	37	1.22	Event occurred	37	1.22
+096-017	Event occurred	32	1.05	Event occurred	116	3.81
+096-019	Event occurred	51	1.68	Censored	133	4.37
+096-021	Event occurred	90	2.96	Censored	90	2.96
+096-094	Event occurred	244	8.02	Event occurred	244	8.02
+096-096	Event occurred	53	1.74	Event occurred	189	6.21
+532-018	Event occurred	27	0.89	Censored	49	1.61
+532-023	Censored	48	1.58	Censored	48	1.58
+532-024	Event occurred	173	5.69	Censored	173	5.69
+532-027	Event occurred	124	4.08	Censored	208	6.84
+532-028	Event occurred	44	1.45	Event occurred	69	2.27
+532-043	Event occurred	138	4.54	Censored	138	4.54
+532-054	Event occurred	44	1.45	Censored	127	4.18
+532-055	Censored	18	0.59	Censored	18	0.59
+532-073	Event occurred	47	1.55	Censored	136	4.47
+532-077	Event occurred	60	1.97	Censored	67	2.2
+532-082	Event occurred	27	0.89	Censored	42	1.38
+532-093	Event occurred	293	9.63	Event occurred	401	13.18
+532-132	Event occurred	127	4.18	Censored	164	5.39
+532-140	Event occurred	200	6.58	Event occurred	200	6.58
+532-143	Censored	283	9.3	Censored	347	11.41
+532-146	Event occurred	133	4.37	Censored	266	8.75
+532-150	Event occurred	55	1.81	Censored	119	3.91
