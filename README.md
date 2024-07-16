@@ -5,26 +5,7 @@
 The data directory includes the source data and code necessary to recreate all main and supplemental figures. The data directory has two subdirectories: 'study' and 'TCGA'.
 The 'study' subdirectory features analysis of the clinical dataset collected at MSKCC, while the 'TCGA' subdirectory represents the data set and analysis that replicate our observations.
 
-All necessary data files to reproduce all the figures are available in the 'data/study' and 'data/TCGA' folders and include:
-
-
-
-C_GAS_gene_list_KEGG
-
-Clinical_phenotypes
-
-Epigentic_pathway_genes
-
-Gene_lists_for_ddGSEA.txt
-
-GLMnet_Functions.R
-
-NanostringCentroids_from_Petiprez_publication
-
-Pathway_annotations_for_24_pathways.txt
-
-TE_family_annotation
-
+All necessary data files to reproduce all the figures are available in the 'data/study' and 'data/TCGA' folders
 
 NOTE: study and TCGA folders do not include gene and Transposable element count matrices ("gene_expression counts" and "INTERGENIC_TE_normalized_expression_1052_repeats"
 becaus of their size), and these files could be downloaded from Zenodo: https://zenodo.org/uploads/10313854 for TCGA data, and study data are avable with controlled access from 
@@ -34,7 +15,7 @@ dbgap acccession phs003284.
 All the costume code used to process RNA-seq data after intial processing by REDISCOVERTE can be found in the 'data/study/' folder, 'data/SAR038', 'data/TCGA/', 'data/study_on_trx' folder.
 
 
-######  OUR STUDY ANALYSIS CODE
+##  OUR STUDY ANALYSIS CODE
 
 
 ## Script_1.R 
