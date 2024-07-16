@@ -1,0 +1,27 @@
+CMOID	Baseline	After treatment 
+C-CPRNJ2 	Immune cold	Immune hot
+C-U859RF 	Immune cold	Immune hot
+C-H7RF5A 	Immune cold	Immune hot
+C-4DV3D5 	Immune cold	Immune hot
+C-WD4RUC 	Immune cold	Immune hot
+C-1LM4EJ 	Immune cold	Immune hot
+C-20FDCU 	Immune cold	Immune hot
+C-J0AW9Y 	Immune cold	Immune hot
+C-2M22RC 	Immune cold	Immune hot
+C-C3AJRC 	Immune cold	Immune hot
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
