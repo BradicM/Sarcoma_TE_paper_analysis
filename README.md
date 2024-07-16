@@ -15,7 +15,9 @@ dbgap acccession phs003284.
 All the costume code used to process RNA-seq data after intial processing by REDISCOVERTE can be found in the 'data/study/' folder, 'data/SAR038', 'data/TCGA/', 'data/study_on_trx' folder.
 
 
-##  OUR STUDY ANALYSIS CODE
+
+
+#  OUR STUDY ANALYSIS CODE
 
 
 ## Script_1.R 
@@ -41,7 +43,9 @@ This script requires that you first run Script_1.R and Script_2.R.
 This script retrieves gene lists for immune pathways from published data and calculates TE-scores for significant TE families. It then performs  partial correlation and plotting of Figure 3A, and correlation and plotting between CD274, TE score and IKZF1 in figure Figure 3B,  and Kaplan-Meier plotting and analysis for Figure 3C (for IKZF1 and TE score).
 
 
-######   SARC038 COHORT ANALYSIS CODE
+
+
+#   SARC038 COHORT ANALYSIS CODE
 
 
 These are 3 scripts that are doing the same type of analysis that is described under OUR STUDY ANALYSIS CODE. The data set used here is SARC038 data that has been 
@@ -55,7 +59,7 @@ The order of running these scripts is the same as above, Script_1.R, Script_2.R,
 
 
 
-######   TCGA ANALYSIS
+#   TCGA ANALYSIS
 
 
 ## Script_1_TCGA.R
@@ -81,7 +85,8 @@ This script also conducts Kaplan-Meier plotting and analysis for inindividual sa
 Finally this script uses previously puvblished methoylation clustering data for DDLP, and correlates it with TE score. 
 
 
-######  STUDY ON TREATMENT SAMPLE ANALYSIS
+#  STUDY ON TREATMENT SAMPLE ANALYSIS
+
 
 This script performs analysis of immune cell proportion clustering on baseline and on-treatment (immune therapy) data and determines which samples have switched/did not switch immune type and groups samples based on 4 categories:
 
@@ -110,7 +115,7 @@ Materials and Methods section of the paper.
 ## HTML file reports
 We also provide compiled HTML report files for each script, containing all the code and figures/tables presented in the manuscript. To access these reports, please download the HTM files for each script.
 
-#Study HTML reports: 
+##Study HTML reports: 
 
 Script_1.html
 
@@ -120,7 +125,7 @@ Script_3.html
 
 Supplemental_figure_4ABC.html
 
-#SARC038 html reports: 
+##SARC038 html reports: 
 Script_1.html
 
 Script_2.html
@@ -128,7 +133,7 @@ Script_2.html
 Script_3.html
 
 
-#TCGA HTML reports: 
+##TCGA HTML reports: 
 
 Script_1_TCGA.html
 
