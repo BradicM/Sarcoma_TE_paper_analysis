@@ -85,7 +85,7 @@ This script also conducts Kaplan-Meier plotting and analysis for inindividual sa
 Finally this script uses previously puvblished methoylation clustering data for DDLP, and correlates it with TE score. 
 
 
-#  STUDY ON TREATMENT SAMPLE ANALYSIS
+#  ON TREATMENT ANALYSIS FROM OUR STUDY
 
 
 This script performs analysis of immune cell proportion clustering on baseline and on-treatment (immune therapy) data and determines which samples have switched/did not switch immune type and groups samples based on 4 categories:
@@ -126,6 +126,7 @@ Script_3.html
 Supplemental_figure_4ABC.html
 
 ##SARC038 html reports: 
+
 Script_1.html
 
 Script_2.html
