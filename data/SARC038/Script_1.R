@@ -1,6 +1,6 @@
 #Author Martina Bradic
 #This script performs a comprehensive analysis of our clinical raw RNA sequencing counts obtained from the REDISCOVERTE
-#pipeline run. The script analyses SAARC038 validation cohort
+#pipeline run. The script analyses SARC038 validation cohort
 #Reference paper and data https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2023.1226445/full#supplementary-material
 ###RNA sequencing libraries were constructed using the KAPA RNA Hyper kit to generate a total RNA library, which was further captured using the Twist Core Exome probe set which targets primarley exons, thus 
 # not a high number of TE related genes are expected. 
@@ -263,14 +263,20 @@ ht4C =Heatmap(mat_PDL1_related_genes_matrix_no_batch,  name = "ICI genes",cluste
 
 ##########. calculate TLS score
 
-
-TLS_9_genes<-data.frame(c("CD79B", "CD1D", "CCR6", "LAT", "SKAP1", "CETP", "EIF1AY", "RBP5", "PTGDS")) #all of these have probes in TWIST exome
-
 #From here: https://www.nature.com/articles/s41568-019-0144-6, 12 chemokine signature, and here: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7725838/
 TLS_genes<-data.frame(c("CCL2","CCL3", "CCL4", "CCL5", "CCL8", "CCL18", "CCL19", "CCL21", "CXCL9", "CXCL10", "CXCL11", "CXCL13"))
 
 
 colnames(TLS_genes)<-"TLS_genes"
+
+##NOW calculate ssGSES TLS score for each sample using normalized counts 
+
+TLS_genes<-data.frame(c("CD79B", "CD1D", "CCR6", "LAT", "SKAP1", "CETP", "EIF1AY", "RBP5", "PTGDS"))
+colnames(TLS_genes)<-"TLS_genes"
+
+TLS_genes_no_B_cell_related<-data.frame(c("CD1D", "LAT", "SKAP1", "CETP", "EIF1AY", "RBP5", "PTGDS"))
+colnames(TLS_genes_no_B_cell_related)<-"TLS_genes"
+
 
 ##NOW calculate ssGSES TLS score for each sample using normalized counts 
 
@@ -281,10 +287,60 @@ geneSets_TLS<-lapply(geneSets_TLS, function(z){ z[!is.na(z) & z != ""]})
 
 gsva_TLS_gene<-gsva(as.matrix(normalized_counts),TLS_genes,method="gsva",kcdf="Gaussian" ,verbose=FALSE)
 
-all.equal(colnames(gsva_TLS_gene),Ordered_pheno$Sample_ID)
+geneSets_TLS_no_B_cell_related<-as.list(TLS_genes_no_B_cell_related)
+geneSets_TLS_no_B_cell_related$TLS_genes<-as.character(geneSets_TLS_no_B_cell_related$`TLS signature`)
+geneSets_TLS_no_B_cell_related<-lapply(geneSets_TLS_no_B_cell_related, function(z){ z[!is.na(z) & z != ""]})
 
-rownames(gsva_TLS_gene)<-"TLS signature"
+gsva_TLS_gene_no_B_cell_related<-gsva(as.matrix(normalized_counts),TLS_genes_no_B_cell_related,method="gsva",kcdf="Gaussian" ,verbose=FALSE)
 
+
+#Function to plot regression
+ggplotRegression <- function (fit) {
+  
+  require(ggplot2)
+  
+  ggplot(fit$model, aes_string(x = names(fit$model)[2], y = names(fit$model)[1])) + 
+    geom_point() +
+    stat_smooth(method = "lm", col = "red") +
+    labs(title = paste("Adj R2 = ",signif(summary(fit)$adj.r.squared, 5),
+                       "Intercept =",signif(fit$coef[[1]],5 ),
+                       " Slope =",signif(fit$coef[[2]], 5),
+                       " P =",signif(summary(fit)$coef[2,4], 5)))
+}
+
+all.equal(colnames(normalized_counts),rownames(mat_for_heatmap_ordered),Ordered_pheno$CMO_ID,rownames(gsva_TLS_gene),rownames(gsva_TLS_gene_no_B_cell_related))
+
+IKZF1_Bcell<-data.frame(normalized_counts[rownames(normalized_counts) %in% c("IKZF1"),],mat_for_heatmap_ordered[,"B cell"],t(gsva_TLS_gene),t(gsva_TLS_gene_no_B_cell_related))
+colnames(IKZF1_Bcell)<-c("IKZF1","B cell","TLS signature","TLS signature no B cell")
+
+reg_IKZF1_B_cells<-ggplotRegression(lm(IKZF1_Bcell$`B cell`~ IKZF1_Bcell$IKZF1+as.numeric(as.factor(Ordered_pheno$`Abbreviation for Figures`))))
+reg_IKZF1_B_cells_update<-reg_IKZF1_B_cells+ theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+                                                   panel.background = element_blank(), axis.line = element_line(colour = "black"),axis.text.x = element_text(face="bold",
+                                                                                                                                                             size=14),axis.text.y = element_text(face="bold", size=14)) +
+  xlab('IKZF1') + ylab("B cell") +
+  theme(axis.title.x = element_text(size=16, face="bold"),
+        axis.title.y = element_text(size=16, face="bold"))
+
+
+reg_IKZF1_TLS<-ggplotRegression(lm(IKZF1_Bcell$IKZF1~ IKZF1_Bcell$`TLS signature`+as.numeric(as.factor(Ordered_pheno$`Abbreviation for Figures`))))
+
+reg_IKZF1_TLS<-reg_IKZF1_TLS+ theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+                                    panel.background = element_blank(), axis.line = element_line(colour = "black"),axis.text.x = element_text(face="bold",
+                                                                                                                                              size=14),axis.text.y = element_text(face="bold", size=14)) +
+  xlab('IKZF1') + ylab("TLS signature") +
+  theme(axis.title.x = element_text(size=16, face="bold"),
+        axis.title.y = element_text(size=16, face="bold"))
+
+
+
+reg_IKZF1_TLS_noB<-ggplotRegression(lm(IKZF1_Bcell$IKZF1~ IKZF1_Bcell$`TLS signature no B cell`+as.numeric(as.factor(Ordered_pheno$`Abbreviation for Figures`))))
+
+reg_IKZF1_TLS_noB<-reg_IKZF1_TLS_noB+ theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+                                            panel.background = element_blank(), axis.line = element_line(colour = "black"),axis.text.x = element_text(face="bold",
+                                                                                                                                                      size=14),axis.text.y = element_text(face="bold", size=14)) +
+  xlab('IKZF1') + ylab("TLS signature no B") +
+  theme(axis.title.x = element_text(size=16, face="bold"),
+        axis.title.y = element_text(size=16, face="bold"))
 
 ##############################.  COMBINE ALL THE FIGURES
 
@@ -471,7 +527,7 @@ median(rowmeans_no_filters)
 
 
 rowmeans_filters<-rowMeans(INTERGENIC_TE_normalized_expression_1052_repeats_filtered)
-hist(rowmeans_filters)
+hist(rowmeans_filters,xlim =c(0,8000))
 median(rowmeans_filters)
 
 dim(INTERGENIC_TE_normalized_expression_1052_repeats_filtered)
