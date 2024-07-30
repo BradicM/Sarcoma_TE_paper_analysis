@@ -257,7 +257,7 @@ ggarrange(reg2_TLS_IKZF1_update, reg1_TLS_TE_update,
 
 ############################################################################################################################
 
-#             KAPLAN MEIEIR ANALYSIS AND PLOTS FOR IKZF1; Figure 4E
+#             KAPLAN MEIEIR ANALYSIS AND PLOTS FOR IKZF1; Figure 5E
 
 ############################################################################################################################
 
@@ -312,7 +312,7 @@ reg1+ theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank
 
 ############################################ ANALYSIS FOR INDIVIDUAL TCGA HISTOLOGIES ###############################################
 
-source("Individual_histology_function_analysis.R")
+source("Individual_histology_function_analysis_final.R")
 
 #WE only consider LMS, UPS, and DDLPS as MFS had only 17 samples which is too small 
 #DDLPS   LMS   MFS   UPS 
@@ -322,6 +322,12 @@ get_individual_TCGA_histology_KM_calcualtions("LMS")
 get_individual_TCGA_histology_KM_calcualtions("DDLPS")
 get_individual_TCGA_histology_KM_calcualtions("UPS")
 
+
+#all histologies except "UPS" to test if "UPS" is driving our observatinos
+
+source("Histology_function_analysis_minus_UPS.R")
+cohort_minus_UPS<-c("LMS","DDLPS","MFS")
+get_TCGA_histology_KM_calcualtions_minus_UPS(cohort_minus_UPS)
 
 
 ##################################. ASSOCIATION BETWEEEN methylation and TE score in DDLPS samples ##################

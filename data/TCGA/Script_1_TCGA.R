@@ -294,9 +294,15 @@ draw(FIG4_ABC)
 
 ##########. calculate TLS score
 TLS_genes<-data.frame(c("CD79B", "CD1D", "CCR6", "LAT", "SKAP1", "CETP", "EIF1AY", "RBP5", "PTGDS"))
-colnames(TLS_genes)<-"TLS signature"
+colnames(TLS_genes)<-"TLS_genes"
+
+TLS_genes_no_B_cell_related<-data.frame(c("CD1D", "LAT", "SKAP1", "CETP", "EIF1AY", "RBP5", "PTGDS"))
+colnames(TLS_genes_no_B_cell_related)<-"TLS_genes"
+
 
 ##NOW calculate ssGSES TLS score for each sample using normalized counts 
+
+#calculate TLS scores
 
 #calculate TLS scores
 geneSets_TLS<-as.list(TLS_genes)
@@ -305,13 +311,60 @@ geneSets_TLS<-lapply(geneSets_TLS, function(z){ z[!is.na(z) & z != ""]})
 
 gsva_TLS_gene<-gsva(as.matrix(normalized_counts),TLS_genes,method="gsva",kcdf="Gaussian" ,verbose=FALSE)
 
-all.equal(colnames(gsva_TLS_gene),Ordered_pheno$CMO_ID)
+geneSets_TLS_no_B_cell_related<-as.list(TLS_genes_no_B_cell_related)
+geneSets_TLS_no_B_cell_related$TLS_genes<-as.character(geneSets_TLS_no_B_cell_related$`TLS signature`)
+geneSets_TLS_no_B_cell_related<-lapply(geneSets_TLS_no_B_cell_related, function(z){ z[!is.na(z) & z != ""]})
 
-rownames(gsva_TLS_gene)<-"TLS signature"
+gsva_TLS_gene_no_B_cell_related<-gsva(as.matrix(normalized_counts),TLS_genes_no_B_cell_related,method="gsva",kcdf="Gaussian" ,verbose=FALSE)
+
+
+#Function to plot regression
+ggplotRegression <- function (fit) {
+  
+  require(ggplot2)
+  
+  ggplot(fit$model, aes_string(x = names(fit$model)[2], y = names(fit$model)[1])) + 
+    geom_point() +
+    stat_smooth(method = "lm", col = "red") +
+    labs(title = paste("Adj R2 = ",signif(summary(fit)$adj.r.squared, 5),
+                       "Intercept =",signif(fit$coef[[1]],5 ),
+                       " Slope =",signif(fit$coef[[2]], 5),
+                       " P =",signif(summary(fit)$coef[2,4], 5)))
+}
+
+all.equal(colnames(normalized_counts),rownames(mat_for_heatmap_ordered),Ordered_pheno$CMO_ID,rownames(gsva_TLS_gene),rownames(gsva_TLS_gene_no_B_cell_related))
+
+IKZF1_Bcell<-data.frame(normalized_counts[rownames(normalized_counts) %in% c("IKZF1"),],mat_for_heatmap_ordered[,"B cell"],t(gsva_TLS_gene),t(gsva_TLS_gene_no_B_cell_related))
+colnames(IKZF1_Bcell)<-c("IKZF1","B cell","TLS signature","TLS signature no B cell")
+
+reg_IKZF1_B_cells<-ggplotRegression(lm(IKZF1_Bcell$`B cell`~ IKZF1_Bcell$IKZF1+as.numeric(as.factor(Ordered_pheno$`Abbreviation for Figures`))+ as.numeric(as.factor(Ordered_pheno$batch))))
+reg_IKZF1_B_cells_update<-reg_IKZF1_B_cells+ theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+                                                   panel.background = element_blank(), axis.line = element_line(colour = "black"),axis.text.x = element_text(face="bold",
+                                                                                                                                                             size=14),axis.text.y = element_text(face="bold", size=14)) +
+  xlab('IKZF1') + ylab("B cell") +
+  theme(axis.title.x = element_text(size=16, face="bold"),
+        axis.title.y = element_text(size=16, face="bold"))
+
+
+reg_IKZF1_TLS<-ggplotRegression(lm(IKZF1_Bcell$IKZF1~ IKZF1_Bcell$`TLS signature`+as.numeric(as.factor(Ordered_pheno$`Abbreviation for Figures`))+ as.numeric(as.factor(Ordered_pheno$batch))))
+
+reg_IKZF1_TLS<-reg_IKZF1_TLS+ theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+                                    panel.background = element_blank(), axis.line = element_line(colour = "black"),axis.text.x = element_text(face="bold",
+                                                                                                                                              size=14),axis.text.y = element_text(face="bold", size=14)) +
+  xlab('IKZF1') + ylab("TLS signature") +
+  theme(axis.title.x = element_text(size=16, face="bold"),
+        axis.title.y = element_text(size=16, face="bold"))
 
 
 
+reg_IKZF1_TLS_noB<-ggplotRegression(lm(IKZF1_Bcell$IKZF1~ IKZF1_Bcell$`TLS signature no B cell`+as.numeric(as.factor(Ordered_pheno$`Abbreviation for Figures`))+ as.numeric(as.factor(Ordered_pheno$batch))))
 
+reg_IKZF1_TLS_noB<-reg_IKZF1_TLS_noB+ theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+                                            panel.background = element_blank(), axis.line = element_line(colour = "black"),axis.text.x = element_text(face="bold",
+                                                                                                                                                      size=14),axis.text.y = element_text(face="bold", size=14)) +
+  xlab('IKZF1') + ylab("TLS signature no B") +
+  theme(axis.title.x = element_text(size=16, face="bold"),
+        axis.title.y = element_text(size=16, face="bold"))
 
 
 ############################################################################################################################
