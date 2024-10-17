@@ -20,59 +20,58 @@ Analysis requires only a standard computer with enough RAM to support the in-mem
 Analysis wa performed on macOS Ventura 13.6.9, R version 4.3.1 (2023-06-16), and following R pacages versions were used: 
 
 attached base packages:
-splines   grid      stats4    stats     graphics  grDevices utils     datasets  methods   base     
- 
+splines,grid,stats4,stats,graphics,grDevices
+
 other attached packages:
-jtools_2.2.2                bnlearn_4.9.1               corrplot_0.92               ppcor_1.1                   MASS_7.3-60.0.1            
-dotwhisker_0.7.4            glmnet_4.1-8                Matrix_1.6-5                ggalt_0.4.0                 gg.layers_0.1.1            
-ggsignif_0.6.4              reshape2_1.4.4              splineTimeR_1.28.0          FIs_1.28.0                  GeneNet_1.2.16             
-fdrtool_1.2.17              longitudinal_1.1.13         corpcor_1.6.10              gtools_3.9.5                GSEABase_1.62.0            
-graph_1.78.0                annotate_1.78.0             XML_3.99-0.16.1             AnnotationDbi_1.62.2        igraph_2.0.2               
-tibble_3.2.1                GSVA_1.48.3                 survminer_0.4.9             ggpubr_0.6.0                ggsci_3.0.0                
-factoextra_1.0.7            FactoMineR_2.9              immunedeconv_2.1.0          EPIC_1.1.7                  survival_3.5-7             
-edgeR_3.42.4                limma_3.56.2                ggplot2_3.4.4               ComplexHeatmap_2.16.0       dplyr_1.1.4                
-SummarizedExperiment_1.30.2 Biobase_2.60.0              GenomicRanges_1.52.0        GenomeInfoDb_1.36.4         IRanges_2.36.0             
-S4Vectors_0.40.2            BiocGenerics_0.48.1         MatrixGenerics_1.14.0       matrixStats_1.2.0           tidyr_1.3.1                
-data.table_1.15.0          
+jtools_2.2.2,bnlearn_4.9.1,corrplot_0.92,ppcor_1.1,MASS_7.3-60.0.1,
+dotwhisker_0.7.4,glmnet_4.1-8,Matrix_1.6-5,ggalt_0.4.0,gg.layers_0.1.1,
+ggsignif_0.6.4,reshape2_1.4.4,splineTimeR_1.28.0,FIs_1.28.0,GeneNet_1.2.16,
+fdrtool_1.2.17,longitudinal_1.1.13,corpcor_1.6.10,gtools_3.9.5,GSEABase_1.62.0,
+graph_1.78.0,annotate_1.78.0,XML_3.99-0.16.1,AnnotationDbi_1.62.2,igraph_2.0.2,
+tibble_3.2.1,GSVA_1.48.3,survminer_0.4.9,ggpubr_0.6.0,ggsci_3.0.0,
+factoextra_1.0.7,FactoMineR_2.9,immunedeconv_2.1.0,EPIC_1.1.7,survival_3.5-7,
+edgeR_3.42.4,limma_3.56.2,ggplot2_3.4.4,ComplexHeatmap_2.16.0,dplyr_1.1.4,
+SummarizedExperiment_1.30.2,Biobase_2.60.0,GenomicRanges_1.52.0,GenomeInfoDb_1.36.4,IRanges_2.36.0,
+S4Vectors_0.40.2,BiocGenerics_0.48.1,MatrixGenerics_1.14.0,matrixStats_1.2.0,tidyr_1.3.1,
+data.table_1.15.0
 
 loaded via a namespace (and not attached):
-ggtext_0.1.2                fs_1.6.3                    bitops_1.0-7                lubridate_1.9.3             insight_0.19.7             
-ash_1.0-15                  httr_1.4.7                  RColorBrewer_1.1-3          doParallel_1.0.17           tools_4.3.1                
-backports_1.4.1             utf8_1.2.4                  R6_2.5.1                    DT_0.31                     HDF5Array_1.28.1           
-mMCPcounter_1.1.0           mgcv_1.9-1                  rhdf5filters_1.12.1         GetoptLong_1.0.5            withr_3.0.0                
-prettyunits_1.2.0           gridExtra_2.3               preprocessCore_1.62.1       cli_3.6.2                   exactRankTests_0.8-35      
-Cairo_1.6-2                 flashClust_1.01-2           sandwich_3.1-0              labeling_0.4.3              ComICS_1.0.4               
-sass_0.4.8                  mvtnorm_1.2-4               survMisc_0.5.6              readr_2.1.5                 genefilter_1.82.1          
-yulab.utils_0.1.4           commonmark_1.9.1            maps_3.4.2                  readxl_1.4.3                rstudioapi_0.15.0          
-RSQLite_2.3.5               gridGraphics_0.5-1          generics_0.1.3              shape_1.4.6                 testit_0.13                
-car_3.1-2                   leaps_3.1                   fansi_1.0.6                 abind_1.4-5                 terra_1.7-65               
-lifecycle_1.0.4             scatterplot3d_0.3-44        multcomp_1.4-25             yaml_2.3.8                  carData_3.0-5              
-MCPcounter_1.2.0            ggstance_0.3.6              rhdf5_2.44.0                SparseArray_1.2.2           BiocFileCache_2.8.0        
-blob_1.2.4                  crayon_1.5.2                lattice_0.22-5              beachmat_2.18.0             cowplot_1.1.3              
-KEGGREST_1.40.1             magick_2.8.2                pillar_1.9.0                knitr_1.45                  boot_1.3-28.1              
-rjson_0.2.21                estimability_1.4.1          codetools_0.2-19            gggrid_0.2-0                glue_1.7.0                 
-vctrs_0.6.5                 png_0.1-8                   cellranger_1.1.0            gtable_0.3.4                datawizard_0.9.1           
-ggpp_0.5.6                  cachem_1.0.8                ggpattern_1.0.1             xfun_0.42                   S4Arrays_1.2.0             
-coda_0.19-4                 SingleCellExperiment_1.22.0 iterators_1.0.14            KMsurv_0.1-5                ellipsis_0.3.2             
-TH.data_1.1-2               nlme_3.1-164                bit64_4.0.5                 progress_1.2.3              filelock_1.0.3             
-data.tree_1.1.0             bslib_0.6.1                 maxstat_0.7-25              irlba_2.3.5.1               KernSmooth_2.23-22         
-colorspace_2.1-0            DBI_1.2.1                   tidyselect_1.2.0            emmeans_1.10.0              extrafontdb_1.0            
-bit_4.0.5                   compiler_4.3.1              curl_5.2.0                  xml2_1.3.6                  DelayedArray_0.28.0        
-bayestestR_0.13.1           scales_1.3.0                proj4_1.0-14                multcompView_0.1-9          rappdirs_0.3.3             
-stringr_1.5.1               digest_0.6.34               fftwtools_0.9-11            rmarkdown_2.25              XVector_0.42.0             
-htmltools_0.5.7             pkgconfig_2.0.3             extrafont_0.19              sparseMatrixStats_1.14.0    highr_0.10                 
-dbplyr_2.4.0                fastmap_1.1.1               rlang_1.1.3                 GlobalOptions_0.1.2         htmlwidgets_1.6.4          
-DelayedMatrixStats_1.24.0   ggh4x_0.2.8                 farver_2.1.1                jquerylib_0.1.4             zoo_1.8-12                 
-jsonlite_1.8.8              BiocParallel_1.36.0         BiocSingular_1.18.0         RCurl_1.98-1.14             magrittr_2.0.3             
-polynom_1.4-1               ggplotify_0.1.2             GenomeInfoDbData_1.2.10     parameters_0.21.3           Rhdf5lib_1.22.1            
-munsell_0.5.0               Rcpp_1.0.12                 stringi_1.8.3               zlibbioc_1.48.0             plyr_1.8.9                 
-rtrend_0.1.5                parallel_4.3.1              ggrepel_0.9.5               Biostrings_2.68.1           pander_0.6.5               
-gridtext_0.1.5              hms_1.1.3                   circlize_0.4.15             locfit_1.5-9.8              markdown_1.12              
-biomaRt_2.56.1              ScaledMatrix_1.10.0         evaluate_0.23               tzdb_0.4.0                  foreach_1.5.2              
-Rttf2pt1_1.3.12             purrr_1.0.2                 km.ci_0.5-6                 clue_0.3-65                 rsvd_1.0.5                 
-broom_1.0.5                 xtable_1.8-4                rstatix_0.7.2               memoise_2.0.1               cluster_2.1.6              
-timechange_0.3.0            sva_3.48.0
-
+ggtext_0.1.2,fs_1.6.3,bitops_1.0-7,lubridate_1.9.3,insight_0.19.7,
+ash_1.0-15,httr_1.4.7,RColorBrewer_1.1-3,doParallel_1.0.17,tools_4.3.1,
+backports_1.4.1,utf8_1.2.4,R6_2.5.1,DT_0.31,HDF5Array_1.28.1,
+mMCPcounter_1.1.0,mgcv_1.9-1,rhdf5filters_1.12.1,GetoptLong_1.0.5,withr_3.0.0,
+prettyunits_1.2.0,gridExtra_2.3,preprocessCore_1.62.1,cli_3.6.2,exactRankTests_0.8-35,
+Cairo_1.6-2,flashClust_1.01-2,sandwich_3.1-0,labeling_0.4.3,ComICS_1.0.4,
+sass_0.4.8,mvtnorm_1.2-4,survMisc_0.5.6,readr_2.1.5,genefilter_1.82.1,
+yulab.utils_0.1.4,commonmark_1.9.1,maps_3.4.2,readxl_1.4.3,rstudioapi_0.15.0,
+RSQLite_2.3.5,gridGraphics_0.5-1,generics_0.1.3,shape_1.4.6,testit_0.13,
+car_3.1-2,leaps_3.1,fansi_1.0.6,abind_1.4-5,terra_1.7-65,
+lifecycle_1.0.4,scatterplot3d_0.3-44,multcomp_1.4-25,yaml_2.3.8,carData_3.0-5,
+MCPcounter_1.2.0,ggstance_0.3.6,rhdf5_2.44.0,SparseArray_1.2.2,BiocFileCache_2.8.0,
+blob_1.2.4,crayon_1.5.2,lattice_0.22-5,beachmat_2.18.0,cowplot_1.1.3,
+KEGGREST_1.40.1,magick_2.8.2,pillar_1.9.0,knitr_1.45,boot_1.3-28.1,
+rjson_0.2.21,estimability_1.4.1,codetools_0.2-19,gggrid_0.2-0,glue_1.7.0,
+vctrs_0.6.5,png_0.1-8,cellranger_1.1.0,gtable_0.3.4,datawizard_0.9.1,
+ggpp_0.5.6,cachem_1.0.8,ggpattern_1.0.1,xfun_0.42,S4Arrays_1.2.0,
+coda_0.19-4,SingleCellExperiment_1.22.0,iterators_1.0.14,KMsurv_0.1-5,ellipsis_0.3.2,
+TH.data_1.1-2,nlme_3.1-164,bit64_4.0.5,progress_1.2.3,filelock_1.0.3,
+data.tree_1.1.0,bslib_0.6.1,maxstat_0.7-25,irlba_2.3.5.1,KernSmooth_2.23-22,
+colorspace_2.1-0,DBI_1.2.1,tidyselect_1.2.0,emmeans_1.10.0,extrafontdb_1.0,
+bit_4.0.5,compiler_4.3.1,curl_5.2.0,xml2_1.3.6,DelayedArray_0.28.0,
+bayestestR_0.13.1,scales_1.3.0,proj4_1.0-14,multcompView_0.1-9,rappdirs_0.3.3,
+stringr_1.5.1,digest_0.6.34,fftwtools_0.9-11,rmarkdown_2.25,XVector_0.42.0,
+htmltools_0.5.7,pkgconfig_2.0.3,extrafont_0.19,sparseMatrixStats_1.14.0,highr_0.10,
+dbplyr_2.4.0,fastmap_1.1.1,rlang_1.1.3,GlobalOptions_0.1.2,htmlwidgets_1.6.4,
+DelayedMatrixStats_1.24.0,ggh4x_0.2.8,farver_2.1.1,jquerylib_0.1.4,zoo_1.8-12,
+jsonlite_1.8.8,BiocParallel_1.36.0,BiocSingular_1.18.0,RCurl_1.98-1.14,magrittr_2.0.3,
+polynom_1.4-1,ggplotify_0.1.2,GenomeInfoDbData_1.2.10,parameters_0.21.3,Rhdf5lib_1.22.1,
+munsell_0.5.0,Rcpp_1.0.12,stringi_1.8.3,zlibbioc_1.48.0,plyr_1.8.9,
+rtrend_0.1.5,parallel_4.3.1,ggrepel_0.9.5,Biostrings_2.68.1,pander_0.6.5,
+gridtext_0.1.5,hms_1.1.3,circlize_0.4.15,locfit_1.5-9.8,markdown_1.12,
+biomaRt_2.56.1,ScaledMatrix_1.10.0,evaluate_0.23,tzdb_0.4.0,foreach_1.5.2,
+Rttf2pt1_1.3.12,purrr_1.0.2,km.ci_0.5-6,clue_0.3-65,rsvd_1.0.5,
+broom_1.0.5,xtable_1.8-4,rstatix_0.7.2,memoise_2.0.1,cluster_2.1.6,
+timechange_0.3.0,sva_3.48.0
 
 #  OUR STUDY ANALYSIS CODE
 
